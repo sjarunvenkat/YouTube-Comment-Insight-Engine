@@ -2,6 +2,15 @@
 
 This is a Python script that extracts the comments of a specific YouTube video and summarizes them into positive, negative, doubt, request, and statement categories. It uses data preprocessing, zero-shot classification with the facebook/bart-large-mnli model, and the Google API.
 
+# Flow Chart
+![Flow Chart](https://raw.githubusercontent.com/sjarunvenkat/YouTube-Comment-Summarizer/main/Flowchart.jpg)
+
+# Screenshots
+![App Screenshot](https://raw.githubusercontent.com/sjarunvenkat/YouTube-Comment-Summarizer/main/welcomepage.png)
+
+![App Screenshot](https://raw.githubusercontent.com/sjarunvenkat/YouTube-Comment-Summarizer/main/outputpage.png)
+
+
 ## Requirements
 - Python 3.x
 - Django
