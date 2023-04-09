@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>YouTube Comment Summarizer</title>
+	<style>
+		body {
+			background-color: #FFE5B4;
+			font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+			text-align: center;
+		}
+		form {
+			background-color: #F2F2F2;
+			padding: 20px;
+			border-radius: 5px;
+			margin-bottom: 20px;
+		}
+		input[type=text] {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+			border: none;
+			border-radius: 4px;
+		}
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 12px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		.doubts {
+			margin-bottom: 20px;
+			border-style: ridge;
+			padding: 10px;
+			background-color: #F9D1C8;
+		}
+		.requests {
+			margin-bottom: 20px;
+			border-style: ridge;
+			padding: 10px;
+			background-color: #E3F2FD;
+		}
+		.negative {
+			margin-bottom: 20px;
+			border-style: ridge;
+			padding: 10px;
+			background-color: #FCE4EC;
+			color: red;
+		}
+		.Statements {
+			margin-bottom: 20px;
+			border-style: ridge;
+			padding: 10px;
+			background-color: #C8E6C9;
+			color: green;
+		}
+	</style>
+</head>
+<body>
+	<h1>YouTube Comment Summarizer</h1>
+	<h4>Enter your YouTube link ID</h4>
+
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="Submit">
+	</form>
+
+	{% if doubts %}
+		<div class="doubts">
+			<h2>Doubts:</h2>
+			{{ doubts }}
+		</div>
+	{% endif %}
+
+	{% if requests %}
+		<div class="requests">
+			<h2>Requests:</h2>
+			{{ requests }}
+		</div>
+	{% endif %}
+
+	{% if negative %}
+		<div class="negative">
+			<h2>Negative Comments:</h2>
+			{{ negative }}
+		</div>
+	{% endif %}
+
+	{% if Statements %}
+		<div class="Statements">
+			<h2>Positive Comments:</h2>
+			{{ Statements }}
+		</div>
+	{% endif %}
+
+</body>
+</html>
